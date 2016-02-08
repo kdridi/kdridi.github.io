@@ -19,3 +19,6 @@ github_username:  kdridi
 
 # Build settings
 markdown: kramdown
+
+source: source
+destination: _site
