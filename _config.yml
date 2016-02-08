@@ -12,13 +12,48 @@ description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/random" # the subpath of your site, e.g. /blog
 url: "https://kdridi.github.io" # the base hostname & protocol for your site
 twitter_username: kdridi
 github_username:  kdridi
 
 # Build settings
-markdown: kramdown
+permalink   : /blog/:year/:title/
+markdown    : kramdown
+highlighter : pygments
+
+gems: [jekyll-paginate]
+
+paginate: 3
+paginate_path: "/blog/page/:num/"
+comments: true
 
 source: source
 destination: _site
+sass:
+  sass_dir: _scss
+  style: compressed # expanded
+
+# Author settings
+author:
+  name      : Karim DRIDI
+  job       : Ingénieur Expert en NTIC
+  bio       : "Enthousiaste, curieux, constamment à la recherche de nouveaux projets innovants et originaux."
+  thumb     : /images/author.jpg
+  email     : karim.dridi@gmail.com
+  url       : http://kdridi.github.io
+  github    : http://github.com/kdridi
+  twitter   : http://twitter.com/kdridi
+  facebook  : http://facebook.com/kdridi
+  linkedin  : http://linkedin.com/in/karimdridi
+
+# navbar pages
+navbar:
+  - slug: blog
+    title: Blog
+  - slug: cv-curriculum-vitae
+    title: CV
+  # - slug: resume
+  #   title: Resume
+  # - slug: skills
+  #   title: Skills

@@ -1,23 +1,22 @@
 ---
-layout: default
+layout: home
 ---
 
-<div class="home">
+<section class="hero">
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="hero-inner container">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <img src="{{ site.author.thumb | prepend: site.baseurl }}" alt="author thumb" class="dot">
+    <h1>/dev/random</h1>
+    <h3>Je m'appelle <strong itemprop="name">{{ site.author.name }}</strong>, un <em itemprop="jobTitle">{{ site.author.job }}</em>.</h3>
+    <h3>{{ site.author.bio }}</h3>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+    {% for item in site.navbar %}
+      <a href="{{ '/' | prepend: site.baseurl }}{{ item.slug }}" title="{{ item.title }}" class="btn btn-ghost btn-home">{{ item.title }}</a>
     {% endfor %}
-  </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    {% include social.html %}
 
-</div>
+  </div>
+
+</section>
